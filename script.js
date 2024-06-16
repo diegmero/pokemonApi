@@ -1,4 +1,9 @@
-// Función asíncrona para obtener detalles de un Pokémon por nombre
+/** AQUI ESTA EL TRABAJO CULMINADO PROFE, ESTAN LAS FUNCIONES SEGUN LA GUIA
+ * ENUMERADO POR PASOS, GRACIAS POR ESTE TRABAJO PUES ME HACE EXIGIR Y PONER EN PRACTICA TODO
+*/
+
+
+// A: Función asíncrona para obtener detalles de un Pokémon por nombre
 async function getPokemonDetails(name) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
@@ -15,7 +20,7 @@ async function getPokemonDetails(name) {
 getPokemonDetails('bulbasaur');
 
 
-// Función asíncrona para obtener detalles de un Pokémon por nombre
+// B: Función asíncrona para obtener detalles de un Pokémon por habilidad
 async function getPokemonAbilities(name) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
@@ -34,7 +39,7 @@ getPokemonAbilities('bulbasaur');
 
 
 
-// Función asíncrona para obtener detalles de un Pokémon por tipo
+// C: Función asíncrona para obtener detalles de un Pokémon por tipo
 async function getPokemonTypeInfo(type) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
@@ -53,7 +58,7 @@ getPokemonTypeInfo('water');
 
 
 
-// Función asíncrona para obtener detalles de un Pokémon por tipo
+// D: Función asíncrona para obtener dla lista de los primeros 50 pokemons
 async function getPokemonCincuenta() {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`);
@@ -71,6 +76,8 @@ async function getPokemonCincuenta() {
 getPokemonCincuenta();
 
 
+
+// E: Funcion para obtener detalles del pokemon nombre tipo de evolucion
 
 async function getPokemonAndEvolutionDetails(name) {
     try {
@@ -110,7 +117,7 @@ async function getPokemonAndEvolutionDetails(name) {
         console.log('evolución: ');
         console.log(`- ${evolutionDetails.species.name}`);
 
-
+        
         // Encontrar y mostrar detalles de la evolución
         while (evolutionDetails.evolves_to.length > 0) {
             evolutionDetails = evolutionDetails.evolves_to[0];
